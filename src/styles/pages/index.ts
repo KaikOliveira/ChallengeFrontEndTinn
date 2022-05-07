@@ -1,21 +1,6 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  background-color: ${({ theme }) => theme.colors.background};
-  min-height: 100vh;
-`;
-
-export const Container = styled.div`
-  width: 100%;
-  max-width: 48.75rem;
-  padding: 0.813rem;
-  border: 1px solid red;
-
+export const Content = styled.div`
   h1 {
     font-size: 1.313rem;
     font-weight: 600;
@@ -25,5 +10,27 @@ export const Container = styled.div`
   p {
     color: ${({ theme }) => theme.colors.text};
     margin-top: 0.313rem;
+  }
+
+  section {
+    display: flex;
+    margin-top: 1rem;
+    gap: 0.813rem;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      & + div {
+        margin-left: 0.813rem;
+      }
+
+      > span {
+        margin-bottom: 0.313rem;
+        color: ${({ theme }) => theme.colors.text};
+      }
+    }
   }
 `;

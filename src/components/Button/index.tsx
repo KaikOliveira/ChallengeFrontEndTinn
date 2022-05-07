@@ -1,4 +1,5 @@
 import React from 'react';
+import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 
 import { ITypesButtonVariant } from 'assets/config/ButtonVariant';
 
@@ -7,13 +8,22 @@ import * as S from './styles';
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   variant?: ITypesButtonVariant;
+  isLoading?: boolean;
+  maxWidth?: string;
 }
 
 const ButtonBase: React.ForwardRefRenderFunction<
   HTMLButtonElement,
   ButtonProps
 > = (
-  { children, onClick, variant = 'DEFAULT', ...rest }: ButtonProps,
+  {
+    children,
+    onClick,
+    variant = 'DEFAULT',
+    isLoading = false,
+    maxWidth,
+    ...rest
+  }: ButtonProps,
   refBtn
 ) => {
   const buttonRef = React.useRef<HTMLButtonElement>(null);
@@ -42,12 +52,18 @@ const ButtonBase: React.ForwardRefRenderFunction<
         setCoords({ x: e.clientX - rect.left, y: e.clientY - rect.top });
         onClick && onClick(e);
       }}
+      disabled={isLoading || rest.disabled}
+      isLoading={isLoading}
+      maxWidth={maxWidth}
       ref={ref}
       {...rest}
     >
       {isRippling && (
         <S.Ripple variant={variant} left={coords.x} top={coords.y} />
       )}
+      <S.LoadingComponent variant={variant} isShow={isLoading}>
+        <AiOutlineLoading3Quarters size={18} />
+      </S.LoadingComponent>
       <S.Content>{children}</S.Content>
     </S.Container>
   );

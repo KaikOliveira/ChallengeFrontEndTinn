@@ -3,6 +3,7 @@ import { QueryClientProvider } from 'react-query';
 
 import Head from 'next/head';
 
+import { LoaderProvider } from 'contexts/loaderContext';
 import { queryClient } from 'services/reactQuery/queryClient';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from 'styles/global';
@@ -15,8 +16,10 @@ export default function MyApp({ Component, pageProps }) {
         <title>Teste Tecnico Tiinova</title>
       </Head>
       <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <Component {...pageProps} />
+        <LoaderProvider>
+          <GlobalStyle />
+          <Component {...pageProps} />
+        </LoaderProvider>
       </ThemeProvider>
     </QueryClientProvider>
   );

@@ -13,17 +13,24 @@ interface RippleProps {
 
 interface ButtonContainerProps {
   variant: ITypesButtonVariant;
+  isLoading: boolean;
+  maxWidth?: string;
 }
 
+type LoadingComponentProps = {
+  isShow: boolean;
+  variant: ITypesButtonVariant;
+};
+
 export const Container = styled.button<ButtonContainerProps>`
-  border-radius: 4px;
+  border-radius: 0.313rem;
   border: none;
-  margin: 8px;
-  padding: 14px 24px;
+  padding: 0.713rem 1rem;
   overflow: hidden;
   position: relative;
   cursor: pointer;
   transition: all 0.3s ease-in;
+  width: 100%;
 
   ${({ variant }) => css`
     ${buttonConfigVariant[variant]}
@@ -32,6 +39,27 @@ export const Container = styled.button<ButtonContainerProps>`
       ${buttonConfigVariant[variant].hover}
     }
   `};
+
+  ${({ maxWidth }) =>
+    maxWidth &&
+    css`
+      max-width: ${maxWidth};
+    `}
+
+  ${({ isLoading }) =>
+    isLoading &&
+    css`
+      color: transparent;
+    `}
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &:not(:disabled):hover {
+    opacity: 0.3;
+  }
 `;
 
 export const Ripple = styled.span<RippleProps>`
@@ -39,14 +67,14 @@ export const Ripple = styled.span<RippleProps>`
   height: 20px;
   position: absolute;
   background: ${({ variant }) =>
-    lighten(0.07, buttonConfigVariant[variant].background)};
+    lighten(0.06, buttonConfigVariant[variant].background)};
   left: ${({ left }) => left}px;
   top: ${({ top }) => top}px;
   display: block;
   content: '';
   border-radius: 9999px;
   opacity: 1;
-  animation: 1s ease 1 forwards ripple-effect;
+  animation: 1.5s ease 1 forwards ripple-effect;
 
   @keyframes ripple-effect {
     0% {
@@ -67,4 +95,32 @@ export const Ripple = styled.span<RippleProps>`
 export const Content = styled.span`
   position: relative;
   z-index: 2;
+  font-size: 0.938rem;
+  font-weight: 500;
+`;
+
+export const LoadingComponent = styled.div<LoadingComponentProps>`
+  ${({ isShow, variant }) =>
+    css`
+      color: ${buttonConfigVariant[variant].color};
+      position: absolute;
+      inset: 0;
+      visibility: ${isShow ? 'visible' : 'hidden'};
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        animation: loading 1.5s linear infinite;
+      }
+
+      @keyframes loading {
+        0% {
+          transform: rotateZ(0deg);
+        }
+        100% {
+          transform: rotateZ(-360deg);
+        }
+      }
+    `}
 `;
