@@ -38,6 +38,12 @@
     "@typescript-eslint/no-use-before-define": "off",
     "react/jsx-filename-extension": "off",
     "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-empty-interface": [
+      "off",
+      {
+        "allowSingleExtends": false
+      }
+    ],
     "import-helpers/order-imports": [
       "warn",
       {

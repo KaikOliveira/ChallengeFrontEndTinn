@@ -1,10 +1,19 @@
-import type { NextPage } from 'next';
+import { Button } from 'components/Button';
+import * as S from 'styles/pages';
 
-const Home: NextPage = () => {
+const Home = () => {
   return (
-    <div>
-      <h1>Hello next</h1>
-    </div>
+    <S.Wrapper>
+      <S.Container>
+        <h1>Seja bem vindo ao teste tecnico do Kaik</h1>
+        <p>Escolha abaixo de qual teste deseja ver</p>
+
+        <section>
+          <span>opões</span>
+          <Button>Opção 1</Button>
+        </section>
+      </S.Container>
+    </S.Wrapper>
   );
 };
 

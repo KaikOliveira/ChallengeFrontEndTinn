@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
   }
 
-  body, input, button, textarea, select {
+  body, input, button, textarea, select, p {
     font: 400 1rem "Inter", sans-serif;
   }
 
@@ -55,21 +55,27 @@ export const GlobalStyle = createGlobalStyle`
   :root {
     --main:#2AD2C9;
     --secondary:#1B1D36;
-    --bg:#F6F8F9;
-    --white: #ffffff;
 
-    --pantone: #F4F8F7;
+    --white: #ffffff;
+    --black: #000;
 
     --gray-200: #E2E8F0;
     --gray-400:#A0AEC0;
     --gray-600:#8B97B1;
-    --gray-700:#777E8A;
+    --gray-high:#777E8A;
+
+    --text: #6A777D;
+    --gray: #F1F1F1;
+    --gray-high: #76899F;
+
+    --title: #232129;
+    --text: #454851;
+    --placeholder: #666360;
 
     --pink:#ED2E7E;
     --rose:#F59090;
     --violet:#9290F5;
     --green:#00BA88;
-
     --yellow:#F4B740;
     --purple:#4164E3;
   }
