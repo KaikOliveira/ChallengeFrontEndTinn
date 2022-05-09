@@ -7,6 +7,10 @@ export const Content = styled.main`
   h1 {
     font-size: 1.6rem;
     font-weight: 600;
+
+    @media (max-width: 436px) {
+      font-size: 1rem;
+    }
   }
 
   header {
@@ -14,6 +18,10 @@ export const Content = styled.main`
     padding-bottom: 0.8rem;
     border-bottom: 1px solid ${({ theme }) => theme.colors.grayLow};
     margin-top: 1rem;
+
+    @media (max-width: 495px) {
+      position: relative;
+    }
 
     button {
       border-radius: 0.313rem;
@@ -26,6 +34,10 @@ export const Content = styled.main`
       display: flex;
       align-items: center;
 
+      @media (max-width: 436px) {
+        padding: 0.413rem 0.735rem;
+      }
+
       &.active {
         background: ${({ theme }) => theme.colors.secondary};
         color: ${({ theme }) => theme.colors.main};
@@ -33,6 +45,10 @@ export const Content = styled.main`
 
       svg {
         margin-right: 0.2rem;
+
+        @media (max-width: 547px) {
+          display: none;
+        }
       }
 
       & + button {
@@ -42,6 +58,12 @@ export const Content = styled.main`
       & + button:last-child {
         background: ${({ theme }) => theme.colors.grayLow};
         margin-left: auto;
+
+        @media (max-width: 495px) {
+          position: absolute;
+          top: -3.2rem;
+          right: 0;
+        }
       }
     }
   }

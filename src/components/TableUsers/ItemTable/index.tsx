@@ -65,29 +65,44 @@ const BaseItemTable = ({ item, refetchUsers }: ItemTableProps) => {
   return (
     <tr key={item.id}>
       <td>
+        <div className="descriptionMobile">
+          <span>Nome:</span>
+        </div>
         <div>
           <span>{item.name}</span>
         </div>
       </td>
       <td>
+        <div className="descriptionMobile">
+          <span>CPF:</span>
+        </div>
         <div>
           <span>{item?.cpf && maskCpf(item.cpf)}</span>
         </div>
       </td>
 
       <td>
+        <div className="descriptionMobile">
+          <span>Telefone:</span>
+        </div>
         <div>
           <span>{item?.phone && maskPhoneNumber(item.phone)}</span>
         </div>
       </td>
 
       <td>
+        <div className="descriptionMobile">
+          <span>E-mail:</span>
+        </div>
         <div>
           <span>{item.email}</span>
         </div>
       </td>
 
       <td>
+        <div className="descriptionMobile">
+          <span>Deletar:</span>
+        </div>
         <div>
           <Button
             type="button"

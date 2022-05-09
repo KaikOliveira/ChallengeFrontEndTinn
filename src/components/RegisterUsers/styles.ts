@@ -6,6 +6,10 @@ export const Container = styled.div`
 
   p {
     padding: 1rem 0;
+
+    @media (max-width: 495px) {
+      font-size: 0.935rem;
+    }
   }
 
   form {
