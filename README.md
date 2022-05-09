@@ -25,6 +25,12 @@
   - Yup
   - Nookies
 
+### Passo a passo
+
+- comando **yarn** para instalar as dependecias
+- comando **yarn dev** para rodar app no localhost
+- abrir o navegador na url **http://localhost:3000/**
+
 ### Observações
 
 Foi configurado o CI/CD para que cada commit feito gerar um novo build atualizado da aplicação.
