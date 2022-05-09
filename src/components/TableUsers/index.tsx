@@ -1,16 +1,16 @@
 import React from 'react';
 
 import { User } from 'interfaces/teste-front';
-import { maskCpf } from 'utils/maskCpf';
-import { maskPhoneNumber } from 'utils/maskPhoneNumber';
 
+import { ItemTable } from './ItemTable';
 import * as S from './styles';
 
 interface TableUsersProps {
   users: User[];
+  refetchUsers: () => Promise<void>;
 }
 
-export const TableUsers = ({ users }: TableUsersProps) => {
+export const TableUsers = ({ users, refetchUsers }: TableUsersProps) => {
   return (
     <S.Container>
       <S.TableContainer>
@@ -29,36 +29,20 @@ export const TableUsers = ({ users }: TableUsersProps) => {
             <th>
               <div>E-mail</div>
             </th>
+            <th>
+              <div>Deletar</div>
+            </th>
           </tr>
         </thead>
 
         <tbody>
           {users?.length > 0 ? (
             users.map((item) => (
-              <tr key={item.cpf}>
-                <td>
-                  <div>
-                    <span>{item.name}</span>
-                  </div>
-                </td>
-                <td>
-                  <div>
-                    <span>{item?.cpf && maskCpf(item.cpf)}</span>
-                  </div>
-                </td>
-
-                <td>
-                  <div>
-                    <span>{item?.phone && maskPhoneNumber(item.phone)}</span>
-                  </div>
-                </td>
-
-                <td>
-                  <div>
-                    <span>{item.email}</span>
-                  </div>
-                </td>
-              </tr>
+              <ItemTable
+                key={item.id}
+                item={item}
+                refetchUsers={refetchUsers}
+              />
             ))
           ) : (
             <S.NotFound>

@@ -13,6 +13,7 @@ export const Wrapper = styled.div`
 export const Container = styled.div`
   width: 100%;
   max-width: 48.75rem;
+  max-height: 95vh;
   padding: 1.313rem;
   background: ${({ theme }) => theme.colors.white};
   border-radius: 0.813rem;

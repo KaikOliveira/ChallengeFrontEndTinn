@@ -1,7 +1,8 @@
 import axios from 'axios';
+import { User } from 'interfaces/teste-front';
 
 class UsersService {
-  async getUsers() {
+  async getUsers(): Promise<User[]> {
     try {
       const { data } = await axios.get(
         'https://private-9d65b3-tinnova.apiary-mock.com/users'

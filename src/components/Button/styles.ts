@@ -56,10 +56,6 @@ export const Container = styled.button<ButtonContainerProps>`
     opacity: 0.5;
     cursor: not-allowed;
   }
-
-  &:not(:disabled):hover {
-    opacity: 0.3;
-  }
 `;
 
 export const Ripple = styled.span<RippleProps>`

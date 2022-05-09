@@ -9,7 +9,13 @@ export const colors = {
   grayLow: '#E2E8F0',
   grayText: '#6A777D',
   main: '#00c8b3',
+  secondary: '#E3F9F8',
   disabled: '#f6f6f6',
   textDisabled: '#dddcdc',
-  backdrop: '#1b1b1fbb'
+  backdrop: '#1b1b1fbb',
+  placeholder: '#A2A2A2',
+  error: '#eb4a46',
+  green: '#00BA88',
+  yellow: '#F4B740',
+  pink: '#ED2E7E'
 };

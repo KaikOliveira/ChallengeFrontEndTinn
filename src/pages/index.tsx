@@ -7,7 +7,6 @@ import { Layout } from 'components/Layout';
 import * as S from 'styles/pages';
 
 const Home = () => {
-  const [loading, setLOading] = React.useState(false);
   return (
     <Layout>
       <S.Content>
@@ -22,25 +21,19 @@ const Home = () => {
                 pathname: '/teste-front'
               }}
             >
-              <Button
-                maxWidth="5.875rem"
-                onClick={() => {
-                  setLOading(true);
-
-                  setTimeout(() => {
-                    setLOading(false);
-                  }, 5000);
-                }}
-                isLoading={loading}
-              >
-                Ver
-              </Button>
+              <Button maxWidth="5.875rem">Ver</Button>
             </Link>
           </div>
 
           <div>
             <span>2 - Avaliação Tinnova</span>
-            <Button maxWidth="5.875rem">Ver</Button>
+            <Link
+              href={{
+                pathname: '/avaliacao-tinnova'
+              }}
+            >
+              <Button maxWidth="5.875rem">Ver</Button>
+            </Link>
           </div>
         </section>
       </S.Content>

@@ -1,6 +1,21 @@
 import styled from 'styled-components';
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  max-height: 72vh;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: ${({ theme }) => theme.colors.backdrop};
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: ${({ theme }) => theme.colors.main};
+  }
+`;
 
 export const TableContainer = styled.table`
   width: 100%;
@@ -22,6 +37,7 @@ export const TableContainer = styled.table`
       }
     }
   }
+
   tbody {
     position: relative;
   }
@@ -40,7 +56,7 @@ export const TableContainer = styled.table`
         align-items: center;
         justify-content: center;
 
-        span {
+        > span {
           color: ${({ theme }) => theme.colors.grayText};
           font-size: 0.875rem;
           text-align: center;

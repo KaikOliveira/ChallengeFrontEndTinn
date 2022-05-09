@@ -2,7 +2,7 @@ import { shade } from 'polished';
 import { theme } from 'styles/theme';
 
 /* eslint-disable no-unused-vars */
-export type ITypesButtonVariant = 'DEFAULT' | 'SECONDARY';
+export type ITypesButtonVariant = 'DEFAULT' | 'SECONDARY' | 'RED';
 
 type IEnumButtonVariant = {
   [key in ITypesButtonVariant]: string;
@@ -10,7 +10,8 @@ type IEnumButtonVariant = {
 
 export const EnumButtonVariant: IEnumButtonVariant = {
   DEFAULT: 'DEFAULT',
-  SECONDARY: 'SECONDARY'
+  SECONDARY: 'SECONDARY',
+  RED: 'RED'
 };
 
 export const buttonConfigVariant = {
@@ -26,6 +27,13 @@ export const buttonConfigVariant = {
     color: theme.colors.textDisabled,
     hover: {
       background: shade(0.15, theme.colors.disabled)
+    }
+  },
+  RED: {
+    background: theme.colors.pink,
+    color: theme.colors.white,
+    hover: {
+      background: shade(0.08, theme.colors.pink)
     }
   }
 };
