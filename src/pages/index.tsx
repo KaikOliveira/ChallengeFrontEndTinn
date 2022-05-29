@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <Layout>
       <S.Content>
-        <h1>Seja bem vindo ao teste tecnico do Kaik</h1>
+        <h1>Seja bem vindo ao teste tecnico</h1>
         <p>Escolha abaixo de qual teste deseja ver</p>
 
         <section>
