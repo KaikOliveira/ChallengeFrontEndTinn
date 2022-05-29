@@ -32,7 +32,9 @@ const Home = () => {
                 pathname: '/avaliacao-tinnova'
               }}
             >
-              <Button maxWidth="5.875rem">Ver</Button>
+              <Button maxWidth="5.875rem" disabled={true}>
+                Ver
+              </Button>
             </Link>
           </div>
         </section>
