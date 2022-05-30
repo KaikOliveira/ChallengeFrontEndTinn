@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { toast } from 'react-toastify';
 
 import { Button } from 'components/Button';
@@ -118,7 +118,7 @@ const BaseItemTable = ({ item, refetchUsers }: ItemTableProps) => {
   );
 };
 
-export const ItemTable = React.memo(BaseItemTable, (prevProps, nextProps) => {
+export const ItemTable = memo(BaseItemTable, (prevProps, nextProps) => {
   if (prevProps.item.id === nextProps.item.id) {
     return true;
   }
