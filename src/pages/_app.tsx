@@ -15,7 +15,7 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider theme={theme}>
       <Head>
-        <title>Teste Tecnico Tiinova</title>
+        <title>Tinnova</title>
       </Head>
 
       <LoaderProvider>
